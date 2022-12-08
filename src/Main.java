@@ -15,13 +15,10 @@ public class Main {
 
         for (int i = 0; i < text.length(); i++) {
             char tmp = text.charAt(i);
-
-            textSearch.put(tmp,i);
-
-
+            if (Character.isLetter(tmp)){
+                textSearch.put(tmp, i);
+            }
         }
-        System.out.println(textSearch);
-
-
+        //System.out.println(textSearch);
     }
 }
