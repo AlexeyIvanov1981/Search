@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
 
     public static String text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
@@ -7,6 +10,17 @@ public class Main {
             "deserunt mollit anim id est laborum.";
 
     public static void main(String[] args) {
+
+        Map<Character, Integer> textSearch = new HashMap<>();
+
+        for (int i = 0; i < text.length(); i++) {
+            char tmp = text.charAt(i);
+
+            textSearch.put(tmp,i);
+
+
+        }
+        System.out.println(textSearch);
 
 
     }
