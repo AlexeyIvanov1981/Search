@@ -28,6 +28,6 @@ public class Main {
             }
         }
 
-        System.out.println(textSearch);
+        System.out.println(textSearch.keySet() + " " + textSearch.values());
     }
 }
