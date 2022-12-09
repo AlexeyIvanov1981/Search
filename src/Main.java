@@ -12,6 +12,9 @@ public class Main {
     public static void main(String[] args) {
 
         Map<Character, Integer> textSearch = new HashMap<>();
+        Map<String, Map.Entry<Character, Integer>> Stat = new HashMap<>();
+        int minValue = Integer.MIN_VALUE;
+        int maxValue = Integer.MAX_VALUE;
 
         for (int i = 0; i < text.length(); i++) {
             char tmpKey = text.charAt(i);
@@ -25,5 +28,26 @@ public class Main {
             }
         }
         System.out.println(textSearch);
+
+        Map.Entry<Character, Integer> maxEntry = null;
+        for (Map.Entry<Character, Integer> entry : textSearch.entrySet()) {
+            if (maxEntry == null || entry.getValue() > maxEntry.getValue()) {
+                maxEntry = entry;
+            }
+        }
+        System.out.println(maxEntry);
+
+        Map.Entry<Character, Integer> minEntry = null;
+        for (Map.Entry<Character, Integer> entry : textSearch.entrySet()) {
+            if (minEntry == null || entry.getValue() < minEntry.getValue()) {
+                minEntry = entry;
+            }
+        }
+        System.out.println(minEntry);
+
+        Stat.put("min", minEntry);
+        Stat.put("max", maxEntry);
+
+        System.out.println(Stat);
     }
 }
