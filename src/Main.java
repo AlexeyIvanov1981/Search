@@ -12,7 +12,8 @@ public class Main {
     public static void main(String[] args) {
 
         Map<Character, Integer> textSearch = new HashMap<>();
-        //int maxValue = 0;
+        Map<String, Map.Entry<Character, Integer>> Stat = new HashMap<>();
+
 
         for (int i = 0; i < text.length(); i++) {
             char tmpKey = text.charAt(i);
@@ -25,18 +26,25 @@ public class Main {
                 textSearch.put(tmpKey, newValue);
             }
         }
+        System.out.println(textSearch);
 
-        System.out.println(textSearch.entrySet());
-
-        for (int i = 0; i < textSearch.size(); i++) {
-            if (textSearch.get(i) > 0){
-                System.out.println("111");
+        Map.Entry<Character, Integer> maxEntry = null;
+        for (Map.Entry<Character, Integer> entry : textSearch.entrySet()) {
+            if (maxEntry == null || entry.getValue() > maxEntry.getValue()) {
+                maxEntry = entry;
             }
         }
+        System.out.println(maxEntry);
 
+        Map.Entry<Character, Integer> minEntry = null;
+        for (Map.Entry<Character, Integer> entry : textSearch.entrySet()) {
+            if (minEntry == null || entry.getValue() < minEntry.getValue()) {
+                minEntry = entry;
+            }
         }
-        //System.out.println(maxValue);
-        //System.out.println(textSearch.entrySet());
+        System.out.println(minEntry);
+
     }
+}
 
 
