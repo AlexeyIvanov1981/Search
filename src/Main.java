@@ -12,8 +12,6 @@ public class Main {
     public static void main(String[] args) {
 
         Map<Character, Integer> textSearch = new HashMap<>();
-        Map<String, Map.Entry<Character, Integer>> Stat = new HashMap<>();
-
 
         for (int i = 0; i < text.length(); i++) {
             char tmpKey = text.charAt(i);
